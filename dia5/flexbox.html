@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #eb9d37;
+            border: 3px solid black;
+            box-shadow: inset 10px 10px 10px rgb(253,200,102); /* inset sombra interna */
+            border-radius: 255px 15px 225px 15px/1px 2px 3px 4px;
+
+            /* propiedades de CSS standard */
+            filter: drop-shadow(  2px 2px 2px rgba(0,0,0,0.5)  );
+
+            /* centrar contenido */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flexx {
+            /*Propiedades de flex*/
+            display: flex;
+            gap: 4px;
+
+            /*Propiedades de CSS comun*/
+            color: white;
+            filter: drop-shadow(2px 2px 2px rgb (0,0,0.5))
+            font-size: x-large;
+            font-weight: bold;
+        }
+
+        .ej1 {
+            flex-direction: row;
+            /*flex-direction: column;
+            flex-direction: row-reverse;
+            flex-direction: column-reverse;*/
+        }
+
+        .boxdouble {
+            width: 200px;
+        }
+
+        .ej2 {
+            /*Podemos reemplazarlo por una sola que es flex flow*/
+            flex-direction: column;
+            flex-wrap: wrap-reverse;
+
+            flex-flow: row wrap;
+        }
+
+        .purplebox {
+            background: purple;
+            padding: 5px;
+            height: 250px;
+        }
+
+        .ej3 {
+            flex-direction: column;
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: center;
+
+            justify-content: space-evenly; /*separaciones todos por igual*/
+            justify-content: space-between;
+            justify-content: space-around; /*laterales 1/2 de los centrales*/
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Flex Direction</h3>
+    
+    <p>Direccion y seleccion del eje PRINCIPAL de nuestros elementos hijos
+        Opciones de row, column, row-reverse y columne-reverse
+    </p>
+
+    <div class="flexx ej1"> 
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+
+    <h3>Flex Wrap</h3>
+
+    <p>Controla si los elementos se ajustan a la misma fila o se desplazan a la siguiente. Conserva el widght y height de los elementos. Las opciones posibles son: nowrap, wrap, wrap-reverse
+        <br>
+        Podemos utilizar flex-flow: row wrap para combinar elementos <b>(flex-direction + wrap)</b>
+    </p>
+
+    <div class="flexx ej2 purplebox"> 
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box boxdouble">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+
+    <h3>Justify content</h3>
+
+    <div class="flexx ej3 purplebox"> 
+        <div class="box boxdouble">1 d</div>
+        <div class="box">2</div>
+        <div class="box boxdouble">3 d</div>
+
+    </div>
+
+</body>
+</html>
