@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo crear un layout Horizontal</title>
+    
+
+    <style>
+        /*Reset CSS para eliminar presets navegador*/
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /*Estilos de mi web*/
+        .container {
+            display: flex;
+            background-color: rgb(222, 187, 152);
+            height: 100vh; /*medida view height es el alto de la vista de la pantalla*/
+        }
+
+        .sidebar {
+            width: 250px; /*ancho de la barra lateral*/
+            padding: 20px; /*margen interno*/
+            background-color: rgb(249, 189, 201);
+        }
+
+        /*Podemos quitar el formato de listas de los li de una ul o ol con list-style: none*/
+        .sidebar ul{
+            list-style: none;
+        }
+
+        .sidebar ul li a{
+            text-decoration: none; /*quitar estilo subrayado*/
+            color: black;
+        }
+
+        .sidebar ul li a:hover{
+            color: rgb(128, 0, 9);
+        }
+
+
+        .main-content {
+            padding: 20px;
+        
+        }
+
+
+    </style>
+</head>
+
+
+
+
+<body>
+    
+    <div class="container">
+        <div class="sidebar">
+            <!-- ul>li*3{Elemento $}+li>a[href="./index.html"]{Home}
+             .  clases
+             #  id
+             >  para entrar dentro de la etiqueta.
+             *  multilpica elementos.
+             {Llaves} escriben texto.
+             {Llaves con $} agregan número a cada item
+             +  agrega etiqueta hermana (sibling)
+             [] acceden a los atributos-->
+
+            <ul>
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+                <li><a href="./index.html">Home</a></li>
+            </ul>
+        </div>
+
+       <!--Shortcut en emmet
+        div.maincontent>h1{Contenido principal}+p{lorem}--> 
+        <div>
+            <div class="maincontent">
+                <h1>Contenido principal</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque placeat voluptates labore, nostrum ab suscipit tempora obcaecati id soluta enim, dicta praesentium, incidunt vel iusto. Sunt ab optio omnis ipsam?</p>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>

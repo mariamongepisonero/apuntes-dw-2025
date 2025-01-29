@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layoutfull</title>
+
+    <style> 
+        /*Reset CSS para eliminar presets navegador*/
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /*Estilos de mi web*/
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .header {
+            width: 100%;
+            padding: 20px;
+            background-color: rgb(249, 189, 201);
+            text-align: center;
+        }
+        
+        .cuerpo {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: row;
+        }
+
+             .sidebar {
+                  width: 200px;
+                   padding: 20px;
+                   border: 1px solid black;
+                    text-align: center;
+             }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+            border: 1px solid black;
+
+        }
+
+        .footer {
+            width: 100%;
+            padding: 20px;
+            background-color: rgb(249, 189, 201);
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="header">Cabecera</div>
+    </div>
+        
+    <div class="cuerpo">
+        <div class="sidebar">
+            <ul>
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+            </ul>
+        </div>
+
+        <div class="content">        
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem neque, commodi mollitia tempore, asperiores quia similique provident doloremque aliquam inventore sint adipisci, itaque esse voluptatem ut impedit unde consequatur sed.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="footer">Pie</div>
+    </div>
+
+</body>
+</html>

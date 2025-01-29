@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo hacer un layout vertical</title>
+
+    <style> 
+        /*Reset CSS para eliminar presets navegador*/
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /*Estilos de mi web*/
+        .container {
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(222, 187, 152);
+            height: 100vh; /*medida view height es el alto de la vista de la pantalla*/
+            justify-content: space-between;
+        }
+        
+        .header {
+            padding: 20px;
+            background-color: rgb(249, 189, 201);
+            text-align: center;
+
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer {
+            padding: 20px;
+            background-color: rgb(249, 189, 201);
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="header">Cabecera</div>
+        <div class="content">Contenido</div>
+        <div class="footer">Pie</div>
+    </div>
+
+</body>
+</html>

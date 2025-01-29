@@ -70,6 +70,17 @@
             justify-content: space-between;
             justify-content: space-around; /*laterales 1/2 de los centrales*/
         }
+
+        .ej4{
+            align-items: flex-start;
+            align-items: center;
+            align-items: flex-end;
+        }
+
+        .ej5{
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
     </style>
 </head>
 
@@ -114,6 +125,29 @@
         <div class="box boxdouble">3 d</div>
 
     </div>
+
+
+    <h3>align-items</h3>
+    <div class="flexx ej4 purplebox"> 
+        <div class="box boxdouble">1 d</div>
+        <div class="box">2</div>
+        <div class="box boxdouble">3 d</div>
+    </div>
+
+
+    <H3>Align Content</H3>
+    <div class="flexx ej5 purplebox"> 
+        <div class="box boxdouble">1 d</div>
+        <div class="box">2</div>
+        <div class="box boxdouble">3 d</div>
+    </div>
+
+    <!-- SIN COMPLETAR ESTOS DOS CASOS
+    <h3>Order</h3>
+
+    <h3>Flex Grow</h3>
+    Indica cuánto van a ocupar los hijos de un contenedor de flex. Normalmente todos valor 0 y a uno se le aplica valor 1 y ocupa más espacio en la pantalla.
+    -->
 
 </body>
 </html>
