@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Completo</title>
+
+    <style>
+        /* Reset de HTML */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Contenedor Layout General */
+        .container {
+            display:flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Estilos para el header y footer */
+        .header, 
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        .footer {
+            text-align: center;
+        }
+
+
+        /* Estilos para la navegación del header */
+        .nav {
+            display:flex;
+            justify-content: space-between ;
+        }
+
+        .nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .header a, 
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .header a:hover, 
+        .footer a:hover {
+            color: #999;
+        }
+
+        /* main: incluye sidebar + content */
+        .main {
+            display: flex;
+            flex:1;
+        }
+
+        /* Estilos para la navegación del sidebar */
+        .sidebar {
+            background-color: #f0f0f0;
+            width: 200px;
+            padding: 10px;
+        }
+
+        .sidebar ul {
+            margin: 10px;
+            list-style-type: none;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: gray;
+        }
+        .sidebar a:hover {
+            color: #333;
+        }
+
+
+        /* EStilos para el contenido */
+        .content {
+            display:flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 10px;
+
+        }
+
+      .sections{
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        padding: 30px;
+        padding-left: 0px;
+
+        ;      
+    }
+
+      .grid{
+        width: 200px;
+        background-color: #333;
+        color: white;
+        padding: 20px;
+
+        flex: 1;
+        box-shadow: 2px 2px 5px rgb(25, 1, 1);
+      }
+
+    
+
+    </style>
+</head>
+
+<body>
+    
+    <!-- 
+    container: Es el contenedor principal que engloba todo el layout.
+    header: Se coloca en la parte superior de la página.
+    main: Contiene el contenido principal de la página, que incluye el sidebar y el content.
+    sidebar: Se coloca a la izquierda dentro del main.
+    content: Se coloca a la derecha dentro del main y contiene múltiples sections.
+    section: Representa las secciones de contenido dentro del content.
+    footer: Se coloca en la parte inferior de la página, fuera del main. 
+    -->
+
+    <!-- container: Contenedor que engloba todo el layout -->
+    <div class="container">
+
+
+        <div class="header">
+            <div class="nav">
+                <div>Logo</div>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- main: Contenido Principal (incluye sidebar que también es parte del contenido) -->
+        <div class="main">
+            <div class="sidebar">
+                <h2>Barra lateral</h2>
+                <ul>
+                    <li><a href="#">Enlace 1</a></li>
+                    <li><a href="#">Enlace 2</a></li>
+                    <li><a href="#">Enlace 3</a></li>
+                </ul>
+            </div>
+    
+            <!-- Contenido a la derecha: Nuestro container de secciones  -->
+            <div class="content">
+
+                <h1>Sección 1</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, nemo. Rerum hic sed dolorem illo, recusandae minus nobis. Corrupti dignissimos vel consequatur? Cupiditate veniam esse minus assumenda in dolor tempora.
+                Suscipit eveniet omnis vitae possimus itaque corporis non sed eligendi praesentium dolore placeat porro, quos fuga asperiores autem quia alias optio molestiae incidunt officia laborum rem necessitatibus aperiam nam. Molestiae!
+                Vitae corrupti, sint fuga cumque ipsa, placeat natus ullam quasi ad laudantium possimus. Dignissimos, perferendis dolores. Vitae magni earum quibusdam. Nesciunt, qui natus! Voluptate soluta commodi, sunt facere expedita beatae?</p> <br>
+
+                <h2>Sección 2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, nemo. Rerum hic sed dolorem illo, recusandae minus nobis. Corrupti dignissimos vel consequatur? Cupiditate veniam esse minus assumenda in dolor tempora.
+                Suscipit eveniet omnis vitae possimus itaque corporis non sed eligendi praesentium dolore placeat porro, quos fuga asperiores autem quia alias optio molestiae incidunt officia laborum rem necessitatibus aperiam nam. Molestiae!
+                Vitae corrupti, sint fuga cumque ipsa, placeat natus ullam quasi ad laudantium possimus. Dignissimos, perferendis dolores. Vitae magni earum quibusdam. Nesciunt, qui natus! Voluptate soluta commodi, sunt facere expedita beatae?</p>
+                
+                <div class="sections">
+                    <div class="grid">
+                        <h3>grid1</h3> <br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aut obcaecati sit nulla natus a, velit dolorem, in magnam aliquid odio maxime harum eum! Sit asperiores id provident illum quos?</p>
+                    </div>
+
+                    <div class="grid">
+                        <h3>seccion2</h3> <br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aut obcaecati sit nulla natus a, velit dolorem, in magnam aliquid odio maxime harum eum! Sit asperiores id provident illum quos?</p>
+                    </div>
+
+                    <div class="grid">
+                        <h3>seccion3</h3> <br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aut obcaecati sit nulla natus a, velit dolorem, in magnam aliquid odio maxime harum eum! Sit asperiores id provident illum quos?</p>
+                    </div>
+                </div>
+
+                <h2>Sección 3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, nemo. Rerum hic sed dolorem illo, recusandae minus nobis. Corrupti dignissimos vel consequatur? Cupiditate veniam esse minus assumenda in dolor tempora.
+                    Suscipit eveniet omnis vitae possimus itaque corporis non sed eligendi praesentium dolore placeat porro, quos fuga asperiores autem quia alias optio molestiae incidunt officia laborum rem necessitatibus aperiam nam. Molestiae!
+                    Vitae corrupti, sint fuga cumque ipsa, placeat natus ullam quasi ad laudantium possimus. Dignissimos, perferendis dolores. Vitae magni earum quibusdam. Nesciunt, qui natus! Voluptate soluta commodi, sunt facere expedita beatae?</p> <br>
+
+
+                <h2>Sección 4</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, nemo. Rerum hic sed dolorem illo, recusandae minus nobis. Corrupti dignissimos vel consequatur? Cupiditate veniam esse minus assumenda in dolor tempora.
+                    Suscipit eveniet omnis vitae possimus itaque corporis non sed eligendi praesentium dolore placeat porro, quos fuga asperiores autem quia alias optio molestiae incidunt officia laborum rem necessitatibus aperiam nam. Molestiae!
+                    Vitae corrupti, sint fuga cumque ipsa, placeat natus ullam quasi ad laudantium possimus. Dignissimos, perferendis dolores. Vitae magni earum quibusdam. Nesciunt, qui natus! Voluptate soluta commodi, sunt facere expedita beatae?</p>
+
+            </div>
+        </div>
+    
+        <div class="footer">
+            <p>Tu Empresa &copy; 2025 - Todos Los derechos reservados. <a href="#">Terminos y Condiciones</a></p>
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

@@ -14,11 +14,6 @@
         }
 
         /*Estilos de mi web*/
-        .container {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
         
         .header {
             width: 100%;
@@ -52,6 +47,8 @@
             width: 100%;
             padding: 20px;
             background-color: rgb(249, 189, 201);
+            display: flex;
+            align-items: end; /*No consigo enviarlo abajo*/
             text-align: center;
         }
 
@@ -62,12 +59,13 @@
 
 <body>
 
-    <div class="container">
-        <div class="header">Cabecera</div>
-    </div>
+    <nav class="header">
+        <p>Cabecera</p>
+    </nav>
         
-    <div class="cuerpo">
+    <section class="cuerpo">
         <div class="sidebar">
+            <h3>Sidebar</h3> <br>
             <ul>
                 <li>Elemento 1</li>
                 <li>Elemento 2</li>
@@ -76,9 +74,10 @@
         </div>
 
         <div class="content">        
+            <h3>Contenido</h3> <br>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem neque, commodi mollitia tempore, asperiores quia similique provident doloremque aliquam inventore sint adipisci, itaque esse voluptatem ut impedit unde consequatur sed.</p>
         </div>
-    </div>
+    </section>
 
     <div class="container">
         <div class="footer">Pie</div>
