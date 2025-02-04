@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con inputs</title>
+    
+</head>
+<body>
+    
+    <h1>Formulario de Ejemplo</h1>
+    <form id="prueba-label" action="#" method="post">
+    <fieldset>
+      <!-- Input Number -->
+      <label for="numero">Ingrese un número:</label>
+      <input type="number" id="numero" name="numero" min="0" max="10">
+  
+      <!-- Input Color -->
+      <label for="color">Seleccione un color:</label>
+      <input type="color" id="color" name="color">
+  
+      <!-- Input Date -->
+      <label for="fecha">Seleccione una fecha:</label>
+      <input type="date" id="fecha" name="fecha">
+    </fieldset>
+    
+    <fieldset>
+      <!-- Input File -->
+      <label for="archivo">Suba un archivo:</label>
+      <input type="file" id="archivo" name="archivo">
+  
+      <!-- Input Range -->
+      <label for="rango">Seleccione un rango (0-100):</label>
+      <input type="range" id="rango" name="rango" min="0" max="100">
+  
+      <!-- Input Hidden -->
+      <input type="hidden" id="oculto" name="oculto" value="valorSecreto">
+  
+      <!-- Botón Reset -->
+      <input type="reset" value="Restablecer formulario">
+    </fieldset>
+  
+      <!-- Botón Submit -->
+      <input type="submit" value="Enviar">
+    </form>
+
+</body>
+</html>
