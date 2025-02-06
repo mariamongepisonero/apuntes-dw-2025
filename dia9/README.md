@@ -18,10 +18,10 @@ Para variables
     guion medio entre cada palabra y todo minúsculas (se usa para nombrar archivos)
 - snake_case: `mi_clase_de_html`
 
-## Nomenclatura BER (Block-Element-Modifier)
+## Nomenclatura BEM (Block-Element-Modifier)
 La página oficial es [BER] (https://getbem.com/naming)
 
-Bloque: encapsula una entidad independiente que tiene significado por sí mismo. Se usa minúsculas para ello. (En el ejemplo: tarjeta)
+Bloque: encapsula una entidad independiente que tiene significado por sí mismo. Se usa minúsculas para ello. (En el ejemplo: tarjeta). El bloque es el nombre del componente el cual por sí solo tiene sentido (card, header, container, button, footer, menu...)
 
 <style>
     .card{}
@@ -34,7 +34,7 @@ Bloque: encapsula una entidad independiente que tiene significado por sí mismo.
     </ul>
 </div>
 
-Elementos: Con el nombre de bloque__nombre del elemento
+Elementos: Con el nombre de bloque__nombre del elemento. Los elementos se encuentran dentro del bloque, son partes del bloque que no tienen sentido por sí solos (menu item, list item, header title...)
 
 <style>
     .card__header{}
@@ -51,8 +51,10 @@ Elementos: Con el nombre de bloque__nombre del elemento
 Evitar usar ids (Dejarlos para JavaScript) y seguir estas nomenclaturas
 
 
-Modificadores: Etiquetas que se pueden aplicar tanto a bloques como a elementos. Va a cambiar la apariencia según su estado.
+Modificadores: Etiquetas que se pueden aplicar tanto a bloques como a elementos. Una variación o estado para un bloque o elemento (xmas, disable, highlighted, color yellow, size big...). Va a cambiar la apariencia o comportamiento del mismo.
 Puedo tener múltiples "tarjetas", pero quiero que una de ellas tenga un estilo distinto. A ese elemento, se le pone el nombre del bloque -- y modificador. Tiene que ir después de la clase que ya está definida con estilos, no sola.
+IMPORTANTE: Si agregamos un modificador, la etiqueta debe incluir también la etiqueta del elemento o bloque. Ej:
+<div class="footer footer--red"></div>
 
 <style>
     .card{}

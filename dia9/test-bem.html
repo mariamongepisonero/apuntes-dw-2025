@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .header{}
+        .header__logo{}
+        .header__nav{}
+        .header__list{}
+        .header__list-items{}
+
+        .main{}
+        .section{}
+        .section__title{}
+        .section__text{}
+        .section__link{}
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="header__logo">Logo</h1>
+        <div class="header__nav">
+            <ul class="header__list">
+                <li class="header__list-item">...</li>
+                <li class="header__list-item">...</li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <div class="section"> <!-- Poniendolo como bloque, podemos asegurarnos que si queremos hacer una section en el footer, por ejemplo, lo mantenemos bien nombrado. Si no vamos a utilizar este bloque fuera del principal, no pasaría nada por nombrarlo main__section-->
+            <h2 class="section__title">...</h2>
+            <p class="section__text">...</p>
+            <a class="section__link">...</a>
+        </div>
+        <div class="section">
+            <h2 class="section__title">...</h2>
+            <p class="section__text">...</p>
+            <a class="section__link">...</a>
+        </div>
+    </div>
+    <div class="footer">
+        <h3 class="footer__title">RSS</h3>
+        <ul class="footer__list">
+            <li class="footer__list-item">...</li>
+            <!-- IMPORTANTE: En los modificadores, hay que poner la clase del elemento normal y también la clase con el modificador, para que aplique ambos estilos-->
+            <li class="footer__list-item footer__list-item--special">...</li>
+            <li class="footer__list-item">...</li>
+        </ul>
+    </div>
+</body>
+</html>
