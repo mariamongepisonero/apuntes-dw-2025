@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Responsive de Mascotas</title>
+  <title>Página Responsive de Mascotas</title>
   <style>
     /* Estilos generales */
     * {
@@ -44,13 +44,11 @@
       body {
         background-color: #ccffcc;
       }
-
-      img {
-        content: url('https://via.placeholder.com/300x200?text=Perrito');
+      .mobile {
+        display: block;
       }
-
-      h1 {
-        content: "Perrito";
+      .tablet, .desktop {
+        display: none;
       }
     }
 
@@ -59,13 +57,11 @@
       body {
         background-color: #cce5ff;
       }
-
-      img {
-        content: url('https://via.placeholder.com/300x200?text=Gatito');
+      .tablet {
+        display: block;
       }
-
-      h1 {
-        content: "Gatito";
+      .mobile, .desktop {
+        display: none;
       }
     }
 
@@ -74,21 +70,29 @@
       body {
         background-color: #ffe6f2;
       }
-
-      img {
-        content: url('https://via.placeholder.com/300x200?text=Patito');
+      .desktop {
+        display: block;
       }
-
-      h1 {
-        content: "Patito";
+      .mobile, .tablet {
+        display: none;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img alt="Imagen de animal">
-    <h1></h1>
+    <div class="mobile">
+        <h1>Perrito</h1>
+        <img src="https://via.placeholder.com/300x200?text=Perrito" alt="Perrito">
+    </div>
+    <div class="tablet">
+      <h1>Gatito</h1>
+      <img src="https://via.placeholder.com/300x200?text=Gatito" alt="Gatito">
+    </div>
+    <div class="desktop">
+      <img src="https://via.placeholder.com/300x200?text=Patito" alt="Patito">
+      <h1>Patito</h1>
+    </div>
   </div>
 </body>
 </html>
