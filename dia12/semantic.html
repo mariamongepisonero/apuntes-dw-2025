@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web semántica</title>
+
+    <style>
+        img{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h1>Web semántica</h1>
+
+    <h3>Elementos con significado</h3>
+
+    Ejemplos de etiquetas semánticas: table, form, article
+
+    Ejemplos de etiquetas no semánticas: div, span... 
+
+
+    <img src="https://assets.hongkiat.com/uploads/html-5-semantics/document-outline-example.jpg" alt="">
+    
+
+    <p>
+        <h3>Header</h3>
+        Es el encabezado de una página, sección o artículo. Incluye elementos como el logo, texto introductorio, menús de navegación. Puede haber múltiples headers en una página, pero no puede haber un header dentro de un footer o de otro header.
+    </p>
+
+    <p>
+        <h3>Footer</h3>
+        Es el pie de página de un sitio o sección. Puede haber múltiples por página. Puede incluir información como:
+        <ul>
+            <li>Información de contacto</li>
+            <li>Enlaces a las RRSS</li>
+            <li>Mapa del sitio</li>
+            <li>Créditos</li>
+            <li>Formulario de contacto</li>
+        </ul>
+    </p>
+
+    <p>
+        <h3>Nav</h3>
+        Define un conjunto de enlaces de navegación. No todos los links deben estar dentro de un nav. 
+    </p>
+
+    <p>
+        <h3>Main</h3>
+        Crea un contenedor para el contenido principal de nuestra página. Este debe ser <b>único</b> y <b>no debe incluir contenido repetido de otras secciones</b>, como por ejemplo del sidebar, logos, etc. No puede ser hijo de etiquetas como article, aside, footer, header o nav. (Al revés sí)
+    </p>
+
+    <p>
+        <h3>Aside</h3>
+        Define el contenido relacionado <b>indirectamente</b> con el contenido principal, como por ejemplo un sidebar. Elementos que solemos poner en un aside:
+        <ul>
+            <li>Publicidad</li>
+            <li>Biografía del autor</li>
+            <li>Enlaces relacionados</li>
+            <li>Información de perfil</li>
+        </ul>
+
+        A veces se pone oculto (display:hidden) para hacer una web responsive y que desaparezca, por ejemplo, en móviles, a no ser que pulses en algún botón.
+    </p>
+
+
+    <p>
+        <h3>Section</h3>
+        Define una sección en una página donde se agrupan los contenidos relacionados, y normalmente ingluyen un título. <br>
+        Una web se compone de varias secciones, cada una con su contenido y propósito. <br>
+        <ul>
+            <li>Capítulos</li>
+            <li>Introducción</li>
+            <li>Noticias o categorías</li>
+            <li>Información de contacto</li>
+        </ul>
+    </p>
+
+    <p>
+        <h3>Article</h3>
+        Define un contenido <b>independiente</b>. El mismo puede ser compartido o reutilizado en otro sitio sin requerir contexto. <br>
+        También suele incluir un título.
+        Ejemplos de uso:
+        <ul>
+            <li>Un post de un blog</li>
+            <li>Un artículo de una revista</li>
+            <li>Un comentario de un usuario (como las reseñas)</li>
+            <li>Tarjeta de producto (por ej. Wallapop)</li>
+        </ul>
+    </p>
+
+    <p>
+        Puedo encontrar artículos dentro de secciones y secciones dentro de artículos. Una sección puede tener múltiples artículos y un artículo puede tener múltiples secciones.
+    </p>
+
+    <p>
+        <h3>Figure</h3>
+        Define elementos autocontenidos, como puede ser una imagen, un diagrama, un gráfico, una tabla o una foto. <br>
+        Dentro de ella, se suele utilizar la etiqueta "figcaption", para describir el contenido (pies de fotos, de tablas...). Esto es además del ya incluido "alt" en caso de imágenes.
+
+        <figure>
+            <img src="./ruta-a-imagen.png" alt="soy una imagen">
+            <figcaption>Fig1. - Imagen de Prueba</figcaption>
+        </figure>
+    </p>
+
+    <p>
+        <h3>Mark</h3>
+        Define un texto resaltado, normalmente se muestra con <mark>fondo amarillo</mark>
+        </p>
+</body>
+</html>

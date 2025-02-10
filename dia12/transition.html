@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: width 2s, background-color 2s;
+            /*se puede usar transition:all para aplicar algo a todo, pero no se recomienda porque se pierde control*/
+        }
+
+        div:hover{
+            width: 300px;
+            background-color: blue;
+            /*si pusiesemos aqui el transition, funciona pero solo mientras se tiene el razón encima, no se deshace progresivamente al quitar el mouse*/
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+
+    </div>
+
+</body>
+</html>
