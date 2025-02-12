@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio unidades medidas CSS</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .padre {
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            font-family: Arial, Helvetica, sans-serif
+            gap: 20px; 
+        }
+
+        .box {
+            width: 30%;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 14px;
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+
+<body class="padre">
+    <div class="box">
+        <h2>Nombre del Usuario</h2>
+        <p>Descripción breve del usuario. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="box">
+        <h2>Nombre del Usuario</h2>
+        <p>Descripción breve del usuario. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades de medidas en CSS</title>
+
+    <style>
+        html{
+            font-size: 16px /*si no especificamos, el valor por defecto son 16px*/
+        }
+
+        .px-box{
+            width: 200px;
+            height: 100px;
+            background-color: antiquewhite;
+        }
+
+        .em-box{
+            font-size: 1.5em; /*1.5 veces el tamaño del padre (24px)*/
+            width: 20em; /*20 veces el tamaño de la fuente padre, o del suyo si tuviese un tamaño especificado*/
+            height: 10em; /*10 veces el tamaño de la fuente padre*/
+            background-color: lightpink;
+        }
+
+        .rem-box{
+            width: 10rem; /*10 veces el tamaño de la fuente HTML*/
+            height: 5rem; /*5 veces el tamaño de la fuente HTML*/
+            background-color: lightgreen;
+        }
+
+        .percent-box{
+            width: 50%;
+            height: 50px;
+            background-color: lightcyan;
+            /*El tamaño se extiende para mantener el porcentaje respecto al contenedor padre*/
+        }
+
+        .padre{
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="padre">
+
+        <div class="px-box"> Caja con medidas en px (200px x 100px)</div>
+        <div class="em-box">Caja con medidas en em (20emx10em) </div>
+        <div class="rem-box">Caja con medidas en rem (10remx5rem)</div>
+        <div class="percent-box">Caja con medidas en % (50% del contenedor)</div>
+
+    </div>
+</body>
+</html>
