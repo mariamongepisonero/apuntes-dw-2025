@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+/*Estilos header*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1; /*el header se coloca encima del resto de elementos si se solapan*/
+}
+
+.header__nav{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+.nav__menu { 
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+/*Estilos main*/
+.grid {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    gap: 0.5%;
+    grid-auto-flow: dense; /*para que las imágenes colocadas se organicen en un orden más lógico*/
+    background-color: #fff;
+}
+
+.grid__item {
+    display: block;
+}
+
+.grid__item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.grid__item--big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.grid__item--tall {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.grid__item--wide {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+/*Estilos footer*/
+.footer {
+    padding: 50px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    position: relative;
+}
+
+.main__footer{
+    margin: 20px;
+    margin-bottom: 50px;
+}
+
+.footer__text{
+    text-align: center;
+}
