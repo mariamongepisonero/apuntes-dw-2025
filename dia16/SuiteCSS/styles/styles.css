@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+/*Estilos header*/
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1; /*el header se coloca encima del resto de elementos si se solapan*/
+}
+
+.Header-nav{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+.Nav-menu { 
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+/*Estilos main*/
+.Grid {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 0.5%;
+    grid-auto-flow: dense; /*para que las imágenes colocadas se organicen en un orden más lógico*/
+    background-color: #fff;
+}
+
+.Grid-item {
+    display: block;
+}
+
+.Grid-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.Grid-item.is-big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.Grid-item.is-large {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.Grid-item.is-wide{
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+/*Estilos footer*/
+.Footer {
+    padding: 50px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    position: relative;
+}
+
+.MainFooter{
+    margin: 20px;
+    margin-bottom: 50px;
+}
+
+.Footer-logo{
+    padding-bottom: 20px;
+}
+
+.Footer-text{
+    text-align: center;
+}
+
+.Footer-copyright{
+    font-size: 9pt;
+}

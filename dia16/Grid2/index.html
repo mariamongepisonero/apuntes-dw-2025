@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web con Grid y BEM</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "sidebar hero hero"
+                "sidebar content1 content2"
+                "footer footer footer";
+            grid-template-columns: 1fr 2fr 2fr;
+            grid-template-rows: auto 1fr 1fr auto;
+            gap: 10px;
+            height: 100vh;
+            padding: 10px;
+            background: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .header { grid-area: header; background: purple; padding: 20px; }
+        .main { display: grid; grid-template-areas: "sidebar hero" "sidebar content1" "sidebar content2"; gap: 10px; }
+        .main__sidebar { grid-area: sidebar; background: teal; padding: 20px; }
+        .main__hero { grid-area: hero; background: blue; padding: 20px; }
+        .main__content--left { grid-area: content1; background: lightblue; padding: 20px; }
+        .main__content--right { grid-area: content2; background: lightblue; padding: 20px; }
+        .footer { grid-area: footer; background: purple; padding: 20px; }
+    </style>
+</head>
+<body>
+    <header class="header">Header</header>
+    <main class="main">
+        <aside class="main__sidebar">Sidebar</aside>
+        <section class="main__hero">Content-1</section>
+        <section class="main__content main__content--left">Content-2</section>
+        <section class="main__content main__content--right">Content-3</section>
+    </main>
+    <footer class="footer">Footer</footer>
+</body>
+</html>
