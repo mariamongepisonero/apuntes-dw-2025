@@ -89,6 +89,14 @@ body {
     margin-bottom: 50px;
 }
 
+.footer__logo{
+    padding-bottom: 20px;
+}
+
 .footer__text{
     text-align: center;
+}
+
+.footer__copyright{
+    font-size: 9pt;
 }
