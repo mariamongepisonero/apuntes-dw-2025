@@ -17,3 +17,15 @@ Para color:
     4. box-shadow
 
 
+## Cómo se definen
+Utilizamos la propiedad transition y se puede personalizar de la siguiente manera:
+
+- transition-property: indica la propiedad a animar.
+- transition-duration: 4s;
+- transition-timing-function;
+- transition-delay: 2s;
+
+Se pueden unificar en una sola: 
+- transition: font-size 4s ease-in-out 2s;
+
+## Pendiente de ver: modo oscuro

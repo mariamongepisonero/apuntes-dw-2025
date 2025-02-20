@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .acordeon{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .acordeon__content{
+            max-height: 0px; /*se ve como una línea*/
+            border: 1px solid blue;
+            overflow: hidden; /*todo lo que sobre, oculto*/
+            transition: max-height 0.5s ease;
+        }
+
+        .acordeon__item.open .acordeon__content{
+            /*selector: acordeom__item que tenga la clase open, selecciona el hijo a(cordeon__content)*/
+            max-height: 300px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <h2>Acordeón</h2>
+
+    <div class="acordeon__item">
+        <h3>Pregunta 1</h3>
+        <div class="acordeon__content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, hic quod sapiente non voluptatum saepe inventore rerum libero distinctio placeat possimus ratione ut adipisci quia excepturi id laudantium minima tempora!</p>
+        </div>
+    </div>
+
+    <div class="acordeon__item open">
+        <h3>Pregunta 2</h3>
+        <div class="acordeon__content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, hic quod sapiente non voluptatum saepe inventore rerum libero distinctio placeat possimus ratione ut adipisci quia excepturi id laudantium minima tempora!</p>
+        </div>
+    </div>
+
+    <div class="acordeon__item">
+        <h3>Pregunta 3</h3>
+        <div class="acordeon__content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, hic quod sapiente non voluptatum saepe inventore rerum libero distinctio placeat possimus ratione ut adipisci quia excepturi id laudantium minima tempora!</p>
+        </div>
+    </div>
+
+    <div class="acordeon__item">
+        <h3>Pregunta 4</h3>
+        <div class="acordeon__content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, hic quod sapiente non voluptatum saepe inventore rerum libero distinctio placeat possimus ratione ut adipisci quia excepturi id laudantium minima tempora!</p>
+        </div>
+    </div>
+
+
+
+    <script>
+        //Código JS para nuestro acordeón
+
+        //1º: seleccionar todos los items con la clase "acordeon__item"
+        const lista_items = document.querySelectorAll('.acordeon__item')
+        //2º: recorrer cada uno de ellos
+        lista_items.forEach( item => {
+            // le voy a asignar un evento de clic
+            item.addEventListener('click',() => {
+                //quitarle la clase "open" a todos
+                lista_items.forEach( item =>  item.classList.remove('open'))
+                //agregarle la clase "open" al que hicimos clic
+                item.classList.add('open')
+            });
+        });
+        
+    </script>
+</body>
+</html>
