@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*Para este tipo de galerías de tarjetas, otra opción es 
+        .container{
+            column-count: 3;
+            column-width: 200px;
+            column-gap: 20px; pero este gap solo aplica a columnas, para indicar el gap arriba y abajo de tarjetas, en la class card habría que indicar un margin bottom de 20px
+        }
+        */
+        .container{
+            /*Para pantallas grandes 4c*/
+            display: grid;
+            grid-template-columns:repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 768px){
+            .container{
+                /*Para pantallas medianas 2c*/
+                grid-template-columns:repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px){
+            .container{
+                /*Para pantallas pequeñas 2c*/
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card{
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .card img{
+            width: 100%;
+            height: auto;
+        }
+
+        .card h2{
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <div class="card">
+        <img src="./img/Rick_Sanchez.jpg" alt="Rick Sanchez">
+        <h2>Rick Sanchez</h2>
+        <p>Estado: Vivo</p>
+        <p>Especie: Humano</p>
+    </div>
+    <div class="card">
+        <img src="./img/Rick_Sanchez.jpg" alt="Rick Sanchez">
+        <h2>Rick Sanchez</h2>
+        <p>Estado: Vivo</p>
+        <p>Especie: Humano</p>
+    </div>
+    <div class="card">
+        <img src="./img/Rick_Sanchez.jpg" alt="Rick Sanchez">
+        <h2>Rick Sanchez</h2>
+        <p>Estado: Vivo</p>
+        <p>Especie: Humano</p>
+    </div>
+    <div class="card">
+        <img src="./img/Rick_Sanchez.jpg" alt="Rick Sanchez">
+        <h2>Rick Sanchez</h2>
+        <p>Estado: Vivo</p>
+        <p>Especie: Humano</p>
+    </div>
+    <div class="card">
+        <img src="./img/Rick_Sanchez.jpg" alt="Rick Sanchez">
+        <h2>Rick Sanchez</h2>
+        <p>Estado: Vivo</p>
+        <p>Especie: Humano</p>
+    </div>
+    <div class="card">
+        <img src="./img/Rick_Sanchez.jpg" alt="Rick Sanchez">
+        <h2>Rick Sanchez</h2>
+        <p>Estado: Vivo</p>
+        <p>Especie: Humano</p>
+    </div>
+    <div class="card">
+        <img src="./img/Rick_Sanchez.jpg" alt="Rick Sanchez">
+        <h2>Rick Sanchez</h2>
+        <p>Estado: Vivo</p>
+        <p>Especie: Humano</p>
+    </div>
+    <div class="card">
+        <img src="./img/Rick_Sanchez.jpg" alt="Rick Sanchez">
+        <h2>Rick Sanchez</h2>
+        <p>Estado: Vivo</p>
+        <p>Especie: Humano</p>
+    </div>
+    <div class="card">
+        <img src="./img/Rick_Sanchez.jpg" alt="Rick Sanchez">
+        <h2>Rick Sanchez</h2>
+        <p>Estado: Vivo</p>
+        <p>Especie: Humano</p>
+    </div>
+
+</body>
+</html>

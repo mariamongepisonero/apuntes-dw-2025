@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Grid</title>
+
+    <style>
+     .Layout{
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 80px 100 px 1fr 60px;
+        grid-template-areas:
+        "header header"
+        "sidebar topcontent"
+        "sidebar main"
+        "footer footer";
+        gap: 10px;
+        height: 100vh;
+        padding: 10px;
+     }   
+
+     .Header{
+        grid-area: header;
+        background-color: rgb(139, 173, 207);
+        text-align: center;
+        padding: 20px;
+     }
+
+     .Sidebar{
+        grid-area: sidebar;
+        background-color: rgb(139, 173, 207);
+        text-align: center;
+        padding: 20px;       
+     }
+
+     .TopContent{
+        grid-area: topcontent;
+        background-color: rgb(139, 173, 207);
+        text-align: center;
+        padding: 20px;
+     }
+
+     .Main{
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+     }
+
+     .Box{
+        grid-area: box;
+        background-color: rgb(139, 173, 207);
+        text-align: center;
+        padding: 20px;
+     }
+    </style>
+
+</head>
+<body class="Layout">
+    
+    <header class="Header">Header</header>
+
+    <aside class="Sidebar">Sidebar</aside>
+
+    <section class="TopContent">Sección superior</section>
+
+    <main class="Main">
+        <div class="Box Box1">Caja 1</div>
+        <div class="Box Box 2">Caja 2</div>
+
+    </main>
+
+    <footer class="Footer">Footer</footer>
+
+</body>
+</html>
