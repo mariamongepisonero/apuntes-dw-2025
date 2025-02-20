@@ -22,10 +22,14 @@ Utilizamos la propiedad transition y se puede personalizar de la siguiente maner
 
 - transition-property: indica la propiedad a animar.
 - transition-duration: 4s;
-- transition-timing-function;
+- transition-timing-function: la manera en que se va a llevar a cabo la transición;
 - transition-delay: 2s;
 
 Se pueden unificar en una sola: 
 - transition: font-size 4s ease-in-out 2s;
+
+
+
+La transición se aplica en el elemento que esté siempre visible (nunca en el que lleva focus, hover, etc)
 
 ## Pendiente de ver: modo oscuro

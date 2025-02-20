@@ -6,27 +6,27 @@
     <title>Document</title>
 
     <style>
-        /*inputs focus*/
         input{
             all: unset; /*reset de estilos del input*/
         }
-
+        
         input{
             border: 1px solid rgb(219, 153, 153);
             border-radius: 5px;
             padding: 10px;
             font-size: 10px;
-
+            
             transition: border-color 0.5s ease,
-                        background-color 0.5s ease;
+            background-color 0.5s ease;
         }
-
+        
+        /*inputs focus*/ /*para inputs o text areas*/
         input:focus{
             border: 2px solid red;
             background-color: rgb(219, 219, 219);
         }
 
-        /*Menu - Hover*/
+        /*Menu - Hover: al hacer clic encima*/
         .menu {
             background-color: lightcoral;
         }
@@ -35,7 +35,7 @@
             transform: translateX(-100%);
         }
         
-        .menu:hover ul {
+        .menu:hover ul /*hover va en el padre pero aplicamos la transición a un elemento*/ {
             transform: translateX(0);
         }
 
