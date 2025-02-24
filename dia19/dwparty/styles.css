@@ -1,0 +1,130 @@
+.body{
+    height: 100%; /*el body ocupe toda la altura de la pantalla */
+}
+
+.layout {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-areas: 
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+    height: 100vh; /*la cuadrícula ocupa toda la altura de la ventana*/
+    gap: 10px;
+}
+
+/*HEADER*/
+.header {
+    grid-area: header;
+    background-color: lightblue;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+/*SIDEBAR*/
+.sidebar {
+    grid-area: sidebar;
+    background-color: lightgray;
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/*MAIN*/
+.main {
+    grid-area: main;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.main__hero{
+    background-color: rgb(218, 187, 186);
+    padding: 10px;
+    height: 200px; /*cambiar*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main__container{
+    background-color: rgb(186, 218, 191);
+    padding: 10px;
+    height: 100px; /*cambiar*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main__container-box{
+    background-color: rgb(143, 204, 153);
+    padding: 10px;
+    height: 1rem;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__container-box:hover{
+    background-color: rgb(105, 160, 114);
+    height: 2rem;
+    width: 10rem;
+    /*añadir angulo, transición 1 segundo (la transición en el d arriba) y rotación*/
+}
+
+.main__galery{
+    background-color: rgb(186, 187, 218);
+    padding: 10px;
+    height: 500px; /*cambiar*/ /*como hacer que ocupe todo lo que necesiten las tarjetas?*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.main__galery-card{
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 5px; /*revisar box-shadow*/
+    transition: transform 0.3s ease-in-out;
+}
+
+.main__galery-card:hover {
+    transform: scale(1.1);
+}
+
+.main__galery-img--2c{ /*revisar, está mal*/
+    grid-column: 2span;
+}
+
+
+
+/*FOOTER*/
+.footer {
+    grid-area: footer;
+    background-color: lightblue;
+    text-align: center;
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
