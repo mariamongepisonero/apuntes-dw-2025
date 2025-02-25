@@ -43,8 +43,6 @@
 .main {
     grid-area: main;
     background-color: white;
-    padding: 10px;
-    border: 1px solid #ccc;
 }
 
 .main__hero{
