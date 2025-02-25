@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RRSS</title>
+
+    <!--Iconos de google fonts-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!--Iconos de font awesome 6.5.1-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Nuestros archivos CSS siempre después de bibliotecas externas:-->
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/controllers.css">
+    <link rel="stylesheet" href="./css/">
+</head>
+
+<body class="u-bgPrimary"> <!--utility-->
+    <header class="Header u-bgPrimary">
+        <h1 class="u-txtCrotah u-textPrimary">RRSS</h1>
+    </header>
+
+    <main class="Main u-bgSecondary">
+
+        <div class="Icons">
+            <!--u-bgPrimary para los elementos que quiero que tengan fondo blanco-->
+            <div class="IconBox u-bgPrimary IconBox--fb">
+
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span fab fa-facebook-f"> </span>
+                    </div>
+
+                    <div class="IconBox-text">
+                        Facebook
+                    </div>
+                </a>
+            </div>
+
+            <div class="IconBox u-bgPrimary IconBox--x">
+
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span fa-brands fa-x-twitter"> </span>
+                    </div>
+
+                    <div class="IconBox-text">
+                        TweetX
+                    </div>
+                </a>
+            </div>
+
+            <div class="IconBox u-bgPrimary IconBox--insta">
+
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span fab fa-instagram"> </span>
+                    </div>
+
+                    <div class="IconBox-text">
+                        Instagram
+                    </div>
+                </a>
+            </div>
+
+            <div class="IconBox u-bgPrimary IconBox--lkdin">
+
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span fab fa-linkedin-in"> </span>
+                    </div>
+
+                    <div class="IconBox-text">
+                        Linkedin
+                    </div>
+                </a>
+            </div>
+
+            <div class="IconBox u-bgPrimary IconBox--yt">
+
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span fab fa-youtube"> </span>
+                    </div>
+
+                    <div class="IconBox-text">
+                        Youtube
+                    </div>
+                </a>
+            </div>
+
+            <div class="IconBox u-bgPrimary IconBox--lion">
+
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span"> </span>
+                        <span class="IconBox-span">L</span>
+                    </div>
+
+                    <div class="IconBox-text">
+                        rey león
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <div class="Controllers">
+
+        <button id="btnDireccion" class="Btn">Columna</button>
+
+        <button class="Btn  Btn--icon">
+
+            <span id="btnDarkLight" class="material-symbols-outlined">
+                dark_mode
+            </span>
+
+        </button>
+    </div>
+
+    <script>
+        // 1. Declarar variables de nuestro DOM
+        const btnDarkLight = document.querySelector("#btnDarkLight");
+        const btnDireccion = document.querySelector("#btnDireccion");
+        const iconsContainer = document.querySelector(".Icons")
+
+        console.log("Botón darkLight es: ", btnDarkLight);
+
+        // 2. Agregar funciones y eventListeners
+        // Toggle: hace lo contrario de como esté
+
+        btnDarkLight.addEventListener("click", () => {
+            document.body.classList.toggle("u-Dark");
+
+            if (document.body.classList.contains("u-Dark")) {
+                btnDarkLight.innerText = "light_mode";
+            } else {
+                btnDarkLight.innerText = "dark_mode";
+            }
+        });
+
+
+        //EJERCICIO:
+
+        btnDireccion.addEventListener("click", () => {  // Agregar clic al botón de fila/columna
+            iconsContainer.classList.toggle("u-flexCol");  //agregar o quitar la clase de flexCol
+
+            if (iconsContainer.classList.contains("u-flexCol")) { //preguntar si tiene la clase flexCol
+                btnDireccion.innerText = "Fila"; //CÓDIGO si se cumple la condición (Texto=fila)
+            } else {
+                btnDireccion.innerText = "Columna"; //Código si no se cumple (Texto=columna)
+            }
+        });
+
+
+        // 3. Inicializar nuestro proyecto.
+    </script>
+
+</body>
+
+</html>
