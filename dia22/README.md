@@ -30,15 +30,28 @@ Perro:
 const alumno = {
     nombre: "Lucía Perez",
     edad: 35, //No va entre comillas porque no es texto, así puede operar con ello
+    direccion: {
+        calle: "Calle falsa",
+        num: 123
+    }
     saludar: function() {
         console.log("Hola, mi nombre es Lucía");
     }
 }
 
+
 //para imprimir el nombre del alumno, usamos algo como:
 console.log(alumno.nombre);
 console.log("Me llamo", alumno.nombre, "y tengo", alumno.edad, "años");
 //imprime en consola "Me llamo Lucía Pérez y tengo 35 años"
+
+//para imprimir la direccion
+console.log(alumno.direccion.num);
+console.log(alumno.direccion.calle+" "+alumno.direccion.num); "Calle falsa 123"
+
+    //Otra opción sería crear variable dirección
+    const direccion = alumno.direccion.calle+" "+alumno.direccion.num;
+    console.log(direccion); // "Calle falsa 123"
 
 
 //para ejecutar un método/función tenemos que usar () al final.
@@ -65,9 +78,12 @@ alumno.saludar();
 
 
 ## Tipos de datos
+Primitivos:
 - Números: enteros, decimales, positivos, negativos, etc.
 - Cadenas de Textos (strings): textos, palabras, frases, 1 letra. Entre comillas 'simples', "dobles" o `backticks`
 - Booleanos: Verdadero o falso
+
+Referenciales:
 - Listas de cosas (Arrays): Se escriben con corchetes [] y los items se separan con coma.
 - Objetos (object): Colección de propiedades (Características) y métodos (funcionalidades) y se escriben con {}
 
@@ -153,6 +169,7 @@ Ejercicio 1: Creación y acceso a arrays
     frutas[1] = "Mango";
     console.log(frutas);
 
+//lenght para que nos de cuantos elementos tiene la lista (buscar como se hace, creo que console.log(futas.lenght))
 ```
 
 
@@ -196,11 +213,10 @@ Ejercicio 3: Arrays de objetos
 ];
 
     console.log(estudiantes[1].nombre);
+    //otra opcion: 
+    //const maria = estudiantes[1];
 
     estudiantes[0].nota = 95;
-
-
-
 ```
 
 
@@ -210,3 +226,19 @@ Ejercicio 4: Métodos en objetos
 
 - Crea un objeto llamado calculadora con las propiedades a y b (números) y un método sumar que retorne la suma de a y b.
 - Asigna valores a a y b y llama al método sumar, imprimiendo el resultado en la consola.
+
+``` js
+    const calculadora = {
+        a: 5,
+        b: 3,
+        sumar: function() {
+            console.log(this.a+this.b);
+        }
+    }
+
+    console.log(calculadora.a); //5
+    console.log(calculadora.b); //3
+    
+    calculadora.sumar(); //8
+
+```
