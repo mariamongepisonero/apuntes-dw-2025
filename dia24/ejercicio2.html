@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Edad</title>
+</head>
+
+<body>
+
+    <h2>Ingresa tu edad</h2>
+    <input id="edad" type="number">
+    <button id="entrar">Entrar</button>
+
+    <script>
+        // Seleccionar elementos
+        const inputEdad = document.querySelector("#edad");
+        const btnEntrar = document.querySelector("#entrar");
+
+        // Evento al hacer clic en el botón
+        btnEntrar.addEventListener("click", function () {
+            let edad = Number(inputEdad.value); // Convertir el valor a número
+
+            if (edad >= 18) {
+                alert("Eres mayor de edad.");
+                
+            } else {
+                alert("Eres menor de edad.");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

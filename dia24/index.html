@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">Click Me!</button>
+
+    <div id="Content">
+        ....
+    </div>
+
+    <script>
+        //hacer un programa que al hacer clic en el botón escriba algo en content
+
+        const boton = document.querySelector("#btn");
+        const container = document.querySelector("#Content");
+
+        boton.addEventListener("click", saludar); //con addEventListener la función no lleva paréntesis al final como normalmente lleva
+
+        function saludar() {
+            //alert("Hola");
+            container.textContent="Soy el texto nuevo agregado con JS"
+        }
+
+
+    </script>
+</body>
+
+</html>

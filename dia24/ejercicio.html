@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Bienvenidos a JS</h1>
+
+    <button class="suma"> Suma 1 </button>
+    <button class="resta"> Resta 2 </button>
+    <button class="multi"> Multiplica 5 </button>
+
+    <h2>Resultado:</h2>
+    <p id="resultado">0</p>
+
+
+    <script>
+        const btnSuma = document.querySelector(".suma");
+        btnSuma.addEventListener("click", sumar);
+
+        const btnResta = document.querySelector(".resta");
+        btnResta.addEventListener("click", restar);
+
+        const btnMulti = document.querySelector(".multi");
+        btnMulti.addEventListener("click", multi);
+
+        const container = document.querySelector("#resultado");
+        let resultado = 0;
+
+        function sumar() {
+            resultado = resultado + 1;
+            imprimir();
+        }
+
+        function restar() {
+            resultado = resultado - 2;
+            imprimir();
+        }
+
+        function multi() {
+            resultado = resultado * 5;
+            
+        }
+        
+        function imprimir(){
+            container.textContent = resultado;
+            //alert(resultado);
+            console.log(resultado);
+        }
+
+    </script>
+
+</body>
+
+</html>
