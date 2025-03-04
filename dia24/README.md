@@ -1,8 +1,10 @@
 # Bucles for para repetir una tarea
+Para ejecutar muchas veces el mismo código
 Los bucles for se dividen en tres partes
     1. Iniciar una variable (normalmente: i);
     2. Crear una condición para esa variable (ej: i<10);
     3. Aplicar un cambio a esa variable cada interacción (ej: i++)
+
 
 ```js
 //Usa un bucle for para imprimir los números del 1 al 10.
@@ -11,10 +13,33 @@ for(let i=1; i<=10; i++){
     console.log("Número:",i);
 }
 
-    //imprimir del 10 al 1
-    for(let i=10; i>0; i--){
-        console.log("Número:",i);
+// imprimir números pares del 1 al 10
+for (let i = 0; i <= 10; i = i + 2) {
+    console.log("Número:", i);
+}
+
+//imprimir del 10 al 1
+        for(let i=10; i>0; i--){
+            console.log("Número:",i);
+        }
+
+
+    //Bucle while (en vez de for) (este hace lo mismo que el de arriba)
+    let i=0;
+    while(i<10){
+        //inicio del bucle
+        console.log(i);
+        //fin del bucle
+        i++;
     }
+
+    //Último tipo de bucle: bucle Do-While
+    //Funciona igual que el while, pero se ejecuta al menos una vez.
+    let i=25;
+    do{
+        console.log(i);
+        i++;
+    } while (i<10);
 ```
 
 

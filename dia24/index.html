@@ -20,7 +20,14 @@
         const boton = document.querySelector("#btn");
         const container = document.querySelector("#Content");
 
-        boton.addEventListener("click", saludar); //con addEventListener la función no lleva paréntesis al final como normalmente lleva
+        boton.addEventListener("click", contar); //con addEventListener la función no lleva paréntesis al final como normalmente lleva
+        let numero = 0; //Variable de ámbito global
+
+        function contar(){
+            const nombre="María"; //Variable de ámbito local
+            numero = numero+1;
+            container.textContent=numero;
+        }
 
         function saludar() {
             //alert("Hola");

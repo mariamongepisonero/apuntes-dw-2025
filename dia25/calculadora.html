@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+</head>
+
+<body>
+    <div class="calculator">
+
+        <!-- Caja de resultado -->
+        <input type="text" id="display" disabled>
+
+        <!-- Botones calculadora -->
+        <button class="btn">1</button>
+        <button class="btn">2</button>
+        <button class="btn">3</button>
+        <button class="btn">4</button>
+        <button class="btn">5</button>
+        <button class="btn">6</button>
+        <button class="btn">7</button>
+        <button class="btn">8</button>
+        <button class="btn">9</button>
+        <button class="btn">0</button>
+
+        <button class="btn operator">+</button>
+        <button class="btn operator">-</button>
+        <button class="btn operator">*</button>
+        <button class="btn operator">/</button>
+
+        <button class="btn" id="equals">=</button>
+        <button class="btn" id="clear">C</button>
+
+    </div>
+
+    <!-- JS -->
+    <script>
+        // Obtenemos los elementos necesarios
+        const display = document.getElementById('display');  // Caja de texto donde mostramos el resultado
+        const buttons = document.querySelectorAll('.btn');  // Todos los botones
+        const clearButton = document.getElementById('clear');  // Botón "C" para limpiar
+        const equalsButton = document.getElementById('equals');  // Botón "=" para calcular el resultado
+
+        let currentInput = "";  // Guardamos la expresión matemática
+
+        // Evento para los botones numéricos y operadores
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                const value = this.textContent;  // Obtenemos el valor del botón
+                currentInput += value;  // Añadimos el valor a la expresión actual
+                display.value = currentInput;  // Mostramos la expresión en el display
+            });
+        });
+
+        // Evento para el botón de limpiar (C)
+        clearButton.addEventListener('click', function () {
+            currentInput = "";  // Reseteamos la expresión
+            display.value = "";  // Limpiamos el display
+        });
+
+        // Evento para el botón "=" que calcula el resultado
+        equalsButton.addEventListener('click', function () {
+            try {
+                currentInput = eval(currentInput);  // Evaluamos la expresión
+                display.value = currentInput;  // Mostramos el resultado en el display
+            } catch (error) {
+                display.value = "Error";  // Si hay un error (por ejemplo, sintaxis incorrecta), mostramos "Error"
+            }
+        });
+    </script>
+
+</body>
+</html>
