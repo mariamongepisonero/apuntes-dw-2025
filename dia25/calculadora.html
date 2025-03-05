@@ -56,13 +56,35 @@
 
     <!------------------- JS ------------------------------->
     <script>
+
         // Cogemos los elementos
         const display = document.getElementById('display');  // Caja de texto del resultado
         const buttons = document.querySelectorAll('.btn');  // Todos los botones
-        const clearButton = document.getElementById('clear');  // Botón "C" limpiar
-        const equalsButton = document.getElementById('equals');  // Botón "=" calcular resultado
+
+        buttons.forEach(button => { //forEach para recorrer todos los botones de la calculadora
+            button.addEventListener('click', () => { //addEventListener a cada botón para detectar clics
+                const value = button.getAttribute('data-value'); //Se obtiene el valor del atributo data-value del botón presionado, que puede ser un número o un operador
+
+                if (value) {
+                    display.value += value;  // (Si el botón tiene data-value) Agregar números y operadores al display
+                }
+            });
+        });
+
+        document.getElementById('clear').addEventListener('click', () => {
+            display.value = '';  // Limpiar pantalla
+        });
+
+        document.getElementById('equals').addEventListener('click', () => {
+            try {
+                display.value = eval(display.value);  // Evaluar la expresión, peligroso
+            } catch {
+                display.value = 'Error';  // Error
+            }
+        });
 
     </script>
 
 </body>
+
 </html>

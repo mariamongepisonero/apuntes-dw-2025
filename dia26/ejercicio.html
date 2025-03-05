@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el número</title>
+</head>
+
+<body>
+    <h1>Adivina el número</h1>
+    <p>Intenta adivinar el número entre 1 y 100</p>
+    
+    <input type="number" id="inputNumero" placeholder="Escribe un número">
+    <button onclick="comprobarNumero()">Comprobar</button>
+    
+    <p id="mensaje"></p>
+
+    <script>
+        const numeroSecreto = Math.floor(Math.random() * 100) + 1; //+1 para que incluya el 100
+
+        function comprobarNumero() {
+            let numeroUsuario= document.getElementById("inputNumero").value;
+            let mensaje= document.getElementById("mensaje");
+
+            if (numeroUsuario == numeroSecreto) {
+                mensaje.innerHTML = "¡Felicidades! Adivinaste el número";
+            } else if (numeroUsuario < numeroSecreto) {
+                mensaje.innerHTML = "Demasiado bajo, inténtalo de nuevo";
+            } else {
+                mensaje.innerHTML = "Demasiado alto, inténtalo de nuevo";
+            }
+        }
+    </script>
+</body>
+
+</html>
