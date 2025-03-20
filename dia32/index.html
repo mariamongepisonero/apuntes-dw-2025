@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #bloque {
+            width: 200px;
+            height: 100px;
+            background-color: greenyellow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="bloque">Bloque</div>
+    <button id="btnRojo">Rojo</button>
+    <button id="btnAzul">Azul</button>
+    <button id="btnColorInicial">Color inicial</button>
+
+    <script>
+        //coger elementos
+        const bloque = document.getElementById("bloque");
+        const btnRojo = document.getElementById("btnRojo");
+        const btnAzul = document.getElementById("btnAzul");
+        const btnColorInicial = document.getElementById("btnColorInicial");
+
+
+        //funcion cambiar color
+        function cambiarColor(color) {
+            bloque.style.backgroundColor = color;
+        }
+
+        // eventlisteners con función flecha enviando parámetro
+        btnRojo.addEventListener("click", () => cambiarColor("red"));
+        btnAzul.addEventListener("click", () => cambiarColor("blue"));
+        btnColorInicial.addEventListener("click", () => cambiarColor("greenyellow"));
+
+
+        //
+        const listaColores = ["red", "blue", "orange", "lightgreen", "lightcoral"]
+
+        let i = 0;  // Índice para llevar el control del color actual
+
+        // Función para cambiar el color al siguiente color en la lista
+        const cambiarColor = () => {
+            // Cambia el color del bloque al siguiente color en la lista
+            bloque.style.backgroundColor = colores[i];
+            // Incrementa el índice y reinicia si se supera el tamaño de la lista
+            i = (i + 1) % colores.length;
+
+            //otra opcion, si el indice llega al final de la lista, que vuelva a ser cero:
+            if (i == listaColores.lenght) {
+                i=0;
+            }
+        };
+    </script>
+
+</body>
+
+</html>

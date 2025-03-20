@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Validación</title>
+    <style>
+        #errorNombre {
+            color: red;
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+
+    <form action="" id="miFormulario">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre">
+        <!-- Mensaje de error -->
+        <span id="errorNombre">ERROR, este campo es obligatorio</span>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        // Coger los elementos del formulario
+        const formulario = document.getElementById("miFormulario");
+        const inputNombre = document.getElementById("nombre");
+        const errorNombre = document.getElementById("errorNombre");
+
+        // Evento para cuando se envíe el formulario
+        formulario.addEventListener("submit", (e) => {
+            e.preventDefault(); // Acceder al evento para evitar el comportamiento por defecto (recarga)
+
+            // Aplicar .trim() para eliminar los espacios antes y después
+            const nombreValor = inputNombre.value.trim();
+
+            // Verificar si el campo está vacío después de aplicar .trim()
+            if (nombreValor === "") {
+                // Si está vacío, mostrar el mensaje de error
+                errorNombre.style.display = "block";
+            } else {
+                // Si tiene texto, ocultar el mensaje de error
+                errorNombre.style.display = "none";
+                alert("Formulario enviado correctamente.");
+            }
+        });
+    </script>
+
+</body>
+</html>

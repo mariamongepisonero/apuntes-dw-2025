@@ -12,25 +12,28 @@
     <p>Intenta adivinar el número entre 1 y 100</p>
     
     <input type="number" id="inputNumero" placeholder="Escribe un número">
-    <button onclick="comprobarNumero()">Comprobar</button>
+    <button id="btnComprobar">Comprobar</button>
     
     <p id="mensaje"></p>
 
     <script>
-        const numeroSecreto = Math.floor(Math.random() * 100) + 1; //+1 para que incluya el 100
+        const numeroAleatorio = Math.floor(Math.random() * 100) + 1; // +1 para que incluya el 100
 
         function comprobarNumero() {
-            let numeroUsuario= document.getElementById("inputNumero").value;
-            let mensaje= document.getElementById("mensaje");
+            let numeroUsuario = document.getElementById("inputNumero").value;
+            let mensaje = document.getElementById("mensaje");
 
-            if (numeroUsuario == numeroSecreto) {
-                mensaje.innerHTML = "¡Felicidades! Adivinaste el número";
-            } else if (numeroUsuario < numeroSecreto) {
+            if (numeroUsuario == numeroAleatorio) {
+                mensaje.innerHTML = "¡¡Felicidades!! Adivinaste el número";
+            } else if (numeroUsuario < numeroAleatorio) {
                 mensaje.innerHTML = "Demasiado bajo, inténtalo de nuevo";
             } else {
                 mensaje.innerHTML = "Demasiado alto, inténtalo de nuevo";
             }
         }
+
+        // Coger botón y agregar el event listener al click 
+        document.getElementById("btnComprobar").addEventListener("click", comprobarNumero);
     </script>
 </body>
 

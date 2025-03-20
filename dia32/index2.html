@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje al pasar el mouse</title>
+    <style>
+        #mensaje {
+            width: 200px;
+            height: 100px;
+            background-color: lightcoral;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #mensajeNuevo {
+            display: none;
+            width: 200px;
+            height: 100px;
+            background-color: lightslategray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="mensaje">Pasa el mouse por aquí</div>
+    <div id="mensajeNuevo">¡Hola!</div>
+
+    <script>
+
+        //coger los elementos con el id
+        const mensaje = document.getElementById("mensaje");
+        const mensaje2 = document.getElementById("mensajeNuevo");
+
+        // Mostrar mensaje al pasar el mouse
+        mensaje.addEventListener("mouseover", () => {
+            mensaje2.style.display = "flex";  // Muestra el mensaje
+        });
+
+        // Ocultar mensaje cuando el mouse sale
+        mensaje.addEventListener("mouseout", () => {
+            mensaje2.style.display = "none";  // Oculta el mensaje
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuento por tipos</title>
+</head>
+
+<body>
+    <h1>Menú de cafetería</h1>
+
+    <h2>Café</h2>
+    <button id="btnCafe1">+1</button>
+    <button id="btnCafe2">+2</button>
+    <button id="btnCafe3">+3</button>
+
+    <h2>Bocadillo</h2>
+    <button id="btnBocadillo1">+1</button>
+    <button id="btnBocadillo2">+2</button>
+    <button id="btnBocadillo3">+3</button>
+
+    <h2>Bebida</h2>
+    <button id="btnBebida1">+1</button>
+    <button id="btnBebida2">+2</button>
+    <button id="btnBebida3">+3</button>
+
+    <h2>Carrito</h2>
+    <button id="vaciar">Vaciar</button>
+    <p>Cafés: <span id="totalCafes">0</span></p>
+    <p>Bocadillos: <span id="totalBocadillos">0</span></p>
+    <p>Bebidas: <span id="totalBebidas">0</span></p>
+
+    <script>
+        // Obtener elementos del DOM
+        const totalCafes = document.getElementById("totalCafes");
+        const totalBocadillos = document.getElementById("totalBocadillos");
+        const totalBebidas = document.getElementById("totalBebidas");
+        const btnVaciar = document.getElementById("vaciar");
+
+        // Contadores para cada tipo de producto
+        let cafes = 0;
+        let bocadillos = 0;
+        let bebidas = 0;
+
+        // Función para agregar al carrito
+        function agregarAlCarrito(cantidad, tipo) {
+            if (tipo === "café") cafes += cantidad;
+            if (tipo === "bocadillos") bocadillos += cantidad;
+            if (tipo === "bebidas") bebidas += cantidad;
+            mostrarTotal(); // Actualizar los totales inmediatamente
+        }
+
+        // Función para mostrar los totales
+        function mostrarTotal() {
+            totalCafes.innerText = cafes;
+            totalBocadillos.innerText = bocadillos;
+            totalBebidas.innerText = bebidas;
+        }
+
+        // Función para vaciar el carrito
+        function borrarCarrito() {
+            cafes = 0;
+            bocadillos = 0;
+            bebidas = 0;
+            mostrarTotal(); // Actualizar la vista
+        }
+
+        // Agregar eventos de clic a los botones
+        document.getElementById("btnCafe1").addEventListener("click", () => agregarAlCarrito(1, "café"));
+        document.getElementById("btnCafe2").addEventListener("click", () => agregarAlCarrito(2, "café"));
+        document.getElementById("btnCafe3").addEventListener("click", () => agregarAlCarrito(3, "café"));
+        document.getElementById("btnBocadillo1").addEventListener("click", () => agregarAlCarrito(1, "bocadillos"));
+        document.getElementById("btnBocadillo2").addEventListener("click", () => agregarAlCarrito(2, "bocadillos"));
+        document.getElementById("btnBocadillo3").addEventListener("click", () => agregarAlCarrito(3, "bocadillos"));
+        document.getElementById("btnBebida1").addEventListener("click", () => agregarAlCarrito(1, "bebidas"));
+        document.getElementById("btnBebida2").addEventListener("click", () => agregarAlCarrito(2, "bebidas"));
+        document.getElementById("btnBebida3").addEventListener("click", () => agregarAlCarrito(3, "bebidas"));
+
+        btnVaciar.addEventListener("click", borrarCarrito);
+    </script>
+</body>
+
+</html>

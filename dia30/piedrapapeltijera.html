@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra papel tijera</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            margin-bottom: 50px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #b31500;
+        }
+
+        h3,
+        h4 {
+            color: #555;
+        }
+
+        span {
+            font-weight: bold;
+            color: #d9534f;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Piedra papel o tijera</h1>
+    <p>Elige una opción: </p>
+    <button id="piedra">Piedra</button>
+    <button id="papel">Papel</button>
+    <button id="tijera">Tijera</button>
+
+    <button id="btnAiVsAi">Auto play</button>
+
+    <h3>Resultado: <span id="resultado"></span></h3>
+    <h4>Victorias: <span id="victorias">0</span></h4>
+    <h4>Derrotas: <span id="derrotas">0</span></h4>
+    <h4>Empates: <span id="empates">0</span></h4>
+
+
+    <script>
+        // Variables victorias, derrotas y empates y agarrar botones
+        let victorias = 0;
+        let derrotas = 0;
+        let empates = 0;
+
+        const btnPiedra = document.getElementById("piedra");
+        const btnPapel = document.getElementById("papel");
+        const btnTijera = document.getElementById("tijera");
+        const btnAutoplay = document.getElementById("btnAiVsAi"); //pc contra sí mismo
+
+        const resultadoSpan = document.getElementById("resultado");
+        const victoriasSpan = document.getElementById("victorias");
+        const derrotasSpan = document.getElementById("derrotas");
+        const empatesSpan = document.getElementById("empates");
+
+        btnPiedra.addEventListener("click", () => {
+            jugar("piedra");
+        })
+        btnPapel.addEventListener("click", () => {
+            jugar("papel");
+        })
+        btnTijera.addEventListener("click", () => {
+            jugar("tijera");
+        })
+
+
+        //función principal: juego jugador
+        function jugar(eleccionUsuario) {
+            const eleccionPC = jugadaPC();
+            const resultado = quienGana(eleccionUsuario, eleccionPC);
+
+            if (resultado === "Ganaste") {
+                victorias++;
+            } else if (resultado === "Perdiste") {
+                derrotas++;
+            } else {
+                empates++;
+            }
+
+            actualizarResultados(resultado);
+        }
+
+        //qué elije el pc
+        function jugadaPC() {
+            const opciones = ["piedra", "papel", "tijera"];
+            const num = Math.floor(Math.random() * opciones.length); // Corregido "length"
+            return opciones[num];
+        }
+
+        function quienGana(jugador, pc) {
+            if (jugador === pc) {
+                return "Empataste";
+            } else if (
+                (jugador === "piedra" && pc === "tijera") ||
+                (jugador === "papel" && pc === "piedra") ||
+                (jugador === "tijera" && pc === "papel")
+            ) {
+                return "Ganaste";
+            } else {
+                return "Perdiste";
+            }
+        }
+
+        function actualizarResultados(resultado) {
+            resultadoSpan.textContent = resultado;
+            victoriasSpan.textContent = victorias;
+            derrotasSpan.textContent = derrotas;
+            empatesSpan.textContent = empates;
+        }
+
+
+    </script>
+
+</body>
+
+</html>

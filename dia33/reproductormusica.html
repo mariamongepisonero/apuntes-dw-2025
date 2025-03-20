@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de música</title>
+    <style>
+        .card {
+            border-radius: 8px;
+            background-color: lightgray;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Div para mostrar las canciones -->
+    <div id="playlist"></div>
+
+    <!-- Botones -->
+    <button id="tema3">Tema 3</button>
+    <button id="siguiente">Siguiente</button>
+    <button id="anterior">Anterior</button>
+    <button id="play">Play</button>
+    <button id="pause">Pause</button>
+
+    <script>
+        // Array de canciones y artistas
+        const listaCanciones = [
+            "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+            "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+            "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+            "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+            "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
+        ];
+
+        const listaArtistas = [
+            "Barry B",
+            "La Milagrosa",
+            "Carolina Durante",
+            "Biznaga",
+            "Cupido"
+        ];
+
+        // Combinamos canciones y artistas
+        const canciones = listaCanciones.map((cancion, idx) => ({
+            url: cancion,
+            artista: listaArtistas[idx]
+        }));
+
+        let indiceActual = 0;
+        let audio = new Audio(canciones[indiceActual].url);
+
+        // Mostrar lista de canciones
+        const playList = document.getElementById("playlist");
+        canciones.forEach((cancion, idx) => {
+            playList.innerHTML += `
+                <div class="card">
+                    <h3>${cancion.artista}</h3>
+                    <p>Canción ${idx + 1}</p>
+                </div>
+            `;
+        });
+
+        // Funcionalidad de los botones
+        document.getElementById("tema3").addEventListener("click", () => {
+            cambiarCancion(2);
+        });
+
+        document.getElementById("siguiente").addEventListener("click", () => {
+            cambiarCancion(indiceActual + 1);
+        });
+
+        document.getElementById("anterior").addEventListener("click", () => {
+            cambiarCancion(indiceActual - 1);
+        });
+
+        document.getElementById("play").addEventListener("click", () => {
+            audio.play();
+        });
+
+        document.getElementById("pause").addEventListener("click", () => {
+            audio.pause();
+        });
+
+        function cambiarCancion(nuevoIndice) {
+            if (nuevoIndice >= 0 && nuevoIndice < canciones.length) {
+                audio.pause();
+                indiceActual = nuevoIndice;
+                audio = new Audio(canciones[indiceActual].url);
+                audio.play();
+            }
+        }
+    </script>
+</body>
+
+</html>

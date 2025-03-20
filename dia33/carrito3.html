@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú cafetería</title>
+</head>
+
+<body>
+    <h1>Menú de cafetería</h1>
+
+    <h2>Café</h2>
+    <button class="btn" data-cant="1" data-tipo="cafe">+1</button>
+    <button class="btn" data-cant="2" data-tipo="cafe">+2</button>
+    <button class="btn" data-cant="3" data-tipo="cafe">+3</button>
+
+    <h2>Bocadillo</h2>
+    <button class="btn" data-cant="1" data-tipo="boca">+1</button>
+    <button class="btn" data-cant="2" data-tipo="boca">+2</button>
+    <button class="btn" data-cant="3" data-tipo="boca">+3</button>
+
+    <h2>Bebida</h2>
+    <button class="btn" data-cant="1" data-tipo="drnk">+1</button>
+    <button class="btn" data-cant="2" data-tipo="drnk">+2</button>
+    <button class="btn" data-cant="3" data-tipo="drnk">+3</button>
+
+    <h2>Carrito</h2>
+    <button id="vaciar">Vaciar</button>
+    <p>Cafés: <span id="totalCafes">0</span></p>
+    <p>Bocadillos: <span id="totalBocadillos">0</span></p>
+    <p>Bebidas: <span id="totalBebidas">0</span></p>
+
+    <script>
+        // Obtener elementos del DOM
+        const botones = document.querySelectorAll(".btn");
+
+        // Asignar el evento de clic a cada botón
+        botones.forEach(btn => {
+            btn.addEventListener("click", agregarAlCarrito);
+        });
+
+        const totalCafes = document.getElementById("totalCafes");
+        const totalBocadillos = document.getElementById("totalBocadillos");
+        const totalBebidas = document.getElementById("totalBebidas");
+        const btnVaciar = document.getElementById("vaciar");
+
+        // Contadores para cada tipo de producto
+        let cafes = 0;
+        let bocadillos = 0;
+        let bebidas = 0;
+
+        // Función para agregar al carrito
+        function agregarAlCarrito(e) {
+            const item = e.target; // El botón que se clickeó
+            const cantidad = parseInt(item.getAttribute("data-cant")); // Obtener la cantidad desde el atributo
+            const tipo = item.getAttribute("data-tipo"); // Obtener el tipo de producto desde el atributo
+
+            // Sumar la cantidad al contador correspondiente
+            if (tipo === "cafe") {
+                cafes += cantidad;
+            } else if (tipo === "boca") {
+                bocadillos += cantidad;
+            } else if (tipo === "drnk") {
+                bebidas += cantidad;
+            }
+
+            // Mostrar los totales actualizados
+            mostrarTotal();
+        }
+
+        // Función para mostrar los totales
+        function mostrarTotal() {
+            totalCafes.innerText = cafes;
+            totalBocadillos.innerText = bocadillos;
+            totalBebidas.innerText = bebidas;
+        }
+
+        // Función para vaciar el carrito
+        function borrarCarrito() {
+            cafes = 0;
+            bocadillos = 0;
+            bebidas = 0;
+            mostrarTotal(); // Actualizar la vista
+        }
+
+        // Agregar evento de clic para vaciar el carrito
+        btnVaciar.addEventListener("click", borrarCarrito);
+    </script>
+</body>
+
+</html>

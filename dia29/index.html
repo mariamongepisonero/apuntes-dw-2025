@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .card {
+            background: #ff5d35;
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta unde odit laboriosam. Neque doloremque eos
+        maxime aspernatur non, nihil, perferendis minima nulla cum placeat atque animi iusto saepe harum similique.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta unde odit laboriosam. Neque doloremque eos
+        maxime aspernatur non, nihil, perferendis minima nulla cum placeat atque animi iusto saepe harum similique.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta unde odit laboriosam. Neque doloremque eos
+        maxime aspernatur non, nihil, perferendis minima nulla cum placeat atque animi iusto saepe harum similique.</p>
+
+    <button class="btn">Botón 1</button>
+    <button class="btn">Botón 2</button>
+
+    <!-- Elementos .card -->
+    <div class="card">Card 1</div>
+    <div class="card">Card 2</div>
+    <div class="card">Card 3</div>
+
+    <!-- Botón para mostrar/ocultar las cards -->
+    <button id="btnToggleCards">Mostrar/ocultar</button>
+
+    <!-- Menú ej. 4 -->
+    <nav id="menu">Menú</nav>
+
+    <script>
+        //1. Cambiar los estilos de todos los párrafos, poniendo su color en #333 y su fuente a 16px. Con forEach
+        const listaParrafos = document.querySelectorAll("p");
+
+        listaParrafos.forEach((parrafo) => {
+            parrafo.style.color = "#333";   // Cambiar el color del texto
+            parrafo.style.fontSize = "16px"; // Cambiar el tamaño de la fuente
+        });
+
+        //2. Teniendo 2 botones con class "btn" usar forEach para agregar un evento de click a cada uno, y que al hacer click cambie su color de fondo a #007bff y texto blanco
+
+        const listaBotones = document.querySelectorAll(".btn");
+
+        listaBotones.forEach((boton) => {
+            boton.addEventListener("click", () => {
+                boton.style.backgroundColor = "#007bff";
+                boton.style.color = "#fff";
+            });
+        });
+
+        //3. Mostrar/ocultar elementos. Seleccionar todos los elementos ".card" y crear un botón que los oculte/muestre a todos o los muestre al hacer click
+
+        const listaCards = document.querySelectorAll(".card"); // Seleccionamos todos los elementos con clase .card
+        const btnToggleCards = document.getElementById("btnToggleCards"); // Seleccionamos el botón con id="btnToggleCards"
+
+        btnToggleCards.addEventListener("click", () => {
+            listaCards.forEach((card) => {
+                // Alternamos la clase "hidden" para ocultar o mostrar
+                card.classList.toggle("hidden");
+            });
+        });
+
+
+        //4. Usando innerHTML, Crear un menú dinámicamente dado el array ["Home", "Nosotros", "Contacto"]. Usar forEach para crear un enlace <a> y agregarla a nuestro <nav>. 
+        // home -> en html sea <a href="#Home">Home</a>
+        // nosotros -> <a href="#Nosotros">Nosotros</a>
+
+        const listaMenu = ["Home", "Nosotros", "Contacto"];
+        const navegacion = document.getElementById("menu");
+
+        // Usamos comillas invertidas (backticks) para interpolación de variables
+        listaMenu.forEach(item => {
+            const enlace = `<a href="#${item}">${item}</a>`;  // Comillas invertidas (backticks) para interpolación
+            navegacion.innerHTML += enlace;  // Concatenamos cada enlace al innerHTML del menú
+        })
+
+        /* con map 
+        nav.innerHTML = listaItems.map(item => {
+            return <a href="#${item}">${item}</a>;
+        });*/
+    </script>
+</body>
+
+</html>

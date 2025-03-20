@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reemplazo de Palabras</title>
+    <style>
+        .hl {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Reemplazo de Palabras</h1>
+
+    <input type="text" id="texto" value="">
+    <button id="revisarBtn">Revisar texto</button>
+    
+    <div id="resultado">ejemplo de texto, si digo <span class="hl">CEI</span> debe aparecer entre 'span'</div>
+
+    <script>
+        const marca = "CEI"; // Definir la palabra a buscar
+        const revisarBtn = document.getElementById("revisarBtn");
+        const resultado = document.getElementById("resultado");
+        const textoInput = document.getElementById("texto");
+        const nuevaMarca = `<span class="hl">${marca}</span>`;
+
+        // Agregar el evento click al botón de revisar
+        revisarBtn.addEventListener("click", function() {
+            // Obtener el valor del input
+            const texto = textoInput.value;
+            
+            // Reemplazar todas las ocurrencias de 'CEI' por el <span> con la clase 'hl'
+            const textoConResaltado = texto.replaceAll(marca, nuevaMarca);
+
+            // Mostrar el texto modificado en el div con id 'resultado'
+            resultado.innerHTML = textoConResaltado;
+        });
+
+
+        // // Otra opción, quitar botón y hacer
+            //textoInput.addEventListener("keyup", () => {
+            //const texto = textoInput.value;
+            // // usar replaceAll
+            //const textoConResaltado = texto.replaceAll(marca, nuevaMarca);
+        //})
+
+        //si no queremos usar replaceAll, se puede usar replace + regex para cambiar nuestro texto
+        const marcaRegex = new RegExp(marca, 'gi') ;
+        resultado.innerHTML = texto.replace(marcaRegExp, nuevaMarca);
+
+    </script>
+
+</body>
+
+</html>

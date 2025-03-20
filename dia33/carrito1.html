@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Menú cafetería</title>
+</head>
+
+<body>
+    <h1>Menú de cafetería</h1>
+
+    <h2>Café</h2>
+    <button id="btnCafe1">+1</button>
+    <button id="btnCafe2">+2</button>
+    <button id="btnCafe3">+3</button>
+
+    <h2>Bocadillo</h2>
+    <button id="btnBocadillo1">+1</button>
+    <button id="btnBocadillo2">+2</button>
+    <button id="btnBocadillo3">+3</button>
+
+    <h2>Bebida</h2>
+    <button id="btnBebida1">+1</button>
+    <button id="btnBebida2">+2</button>
+    <button id="btnBebida3">+3</button>
+
+    <h2>Carrito</h2>
+    <button id="ver">Ver Total</button>
+    <button id="vaciar">Vaciar</button>
+    <span id="totalItems"></span>
+
+    <script>
+        //coger elementos y poner en variables
+        const totalItems = document.getElementById("totalItems");
+        const btnVerTotal = document.getElementById("ver");
+        const btnVaciar = document.getElementById("vaciar");
+
+        //contador a cero
+        let carrito = 0;
+
+        //3 funciones
+        function agregarAlCarrito(cantidad, tipo) {
+            carrito += cantidad;
+        }
+
+        function mostrarTotal() {
+            totalItems.innerText = carrito;
+        }
+
+        function borrarCarrito() {
+            carrito = 0;
+            totalItems.innerText = "";
+        }
+
+
+        //agregar evento clic
+        document.getElementById("btnCafe1").addEventListener("click", () => agregarAlCarrito(1, "café"));
+        document.getElementById("btnCafe2").addEventListener("click", () => agregarAlCarrito(2, "café"));
+        document.getElementById("btnCafe3").addEventListener("click", () => agregarAlCarrito(3, "café"));
+        document.getElementById("btnBocadillo1").addEventListener("click", () => agregarAlCarrito(1, "bocadillos"));
+        document.getElementById("btnBocadillo2").addEventListener("click", () => agregarAlCarrito(2, "bocadillos"));
+        document.getElementById("btnBocadillo3").addEventListener("click", () => agregarAlCarrito(3, "bocadillos"));
+        document.getElementById("btnBebida1").addEventListener("click", () => agregarAlCarrito(1, "bebidas"));
+        document.getElementById("btnBebida2").addEventListener("click", () => agregarAlCarrito(2, "bebidas"));
+        document.getElementById("btnBebida3").addEventListener("click", () => agregarAlCarrito(3, "bebidas"));
+
+        btnVerTotal.addEventListener("click", mostrarTotal);
+        btnVaciar.addEventListener("click", borrarCarrito);
+    </script>
+</body>
+
+</html>

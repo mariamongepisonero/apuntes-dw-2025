@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar mensaje al pasar el ratón</title>
+    <style>
+        #bloque {
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bloque vacío inicialmente -->
+    <div id="bloque"></div>
+
+    <script>
+        const bloque = document.getElementById("bloque");
+
+        // Al pasar el ratón sobre el bloque
+        bloque.addEventListener("mouseenter", () => {
+            bloque.textContent = "¡Hola!"; // Mostrar el mensaje
+        });
+
+        // Al dejar el ratón del bloque
+        bloque.addEventListener("mouseleave", () => {
+            bloque.textContent = ""; // Borrar el mensaje
+        });
+    </script>
+
+</body>
+</html>

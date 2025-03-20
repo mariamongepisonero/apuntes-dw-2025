@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara o cruz</title>
+</head>
+
+<body>
+    <h1>Cara o cruz</h1>
+    <button id="botonLanzar">Lanzar moneda</button>
+    <p>Resultado: <span id="resultado"></span></p>
+
+    <p>Nº caras: <span id="caras">0</span></p>
+    <p>Nº cruces: <span id="cruces">0</span></p>
+    <p>Porcentaje de caras: <span id="porcentaje">0</span>%</p>
+
+
+
+    <script>
+        let recuentoCaras = 0;
+        let recuentoCruces = 0;
+
+        function lanzarMoneda() {
+            let resultado = Math.random() < 0.5 ? "Cara" : "Cruz"; //Genera número aleatorio entre 0 y 1. Si es menos de 0.5, cara, y si es más, cruz. Operador ternario.
+            document.getElementById("resultado").textContent = resultado;
+
+            //recuento caras y cruces
+            resultado === "Cara" ? recuentoCaras++ : recuentoCruces++;
+
+            document.getElementById("caras").textContent = recuentoCaras;
+            document.getElementById("cruces").textContent = recuentoCruces;
+
+            //porcentaje
+            const porcentaje = recuentoCaras/(recuentoCaras+recuentoCruces)*100;
+            document.getElementById("porcentaje").textContent = Math.round(porcentaje);
+        }
+
+
+        document.getElementById("botonLanzar").addEventListener("click", lanzarMoneda);
+
+
+    </script>
+
+</body>
+
+</html>

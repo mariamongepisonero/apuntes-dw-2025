@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación de Strings DW</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            background: #fff;
+            width: 400px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #resultado {
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            background: white;
+            display: block;
+            width: 400px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        #nombre {
+            font-size: 18px;
+        }
+
+        #iniciales {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: white;
+            background-color: gray;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 id="titulo">Este es el título en minúsculas</h1>
+
+        <button onclick="convertirMayus()">MAYÚSCULAS</button>
+        <button onclick="convertirMinus()">minúsculas</button>
+
+        <div id="resultado"></div>
+
+        <p id="nombre">maría monge <span id="iniciales"></span></p>
+
+    </div>
+
+
+
+    <script>
+        //Mayus y minus
+        const titulo = document.getElementById("titulo");
+        const resultado = document.getElementById("resultado");
+
+        function convertirMayus() {
+            resultado.innerText = titulo.innerText.toUpperCase();
+        }
+
+        function convertirMinus() {
+            resultado.innerText = titulo.innerText.toLowerCase();
+        }
+
+        // Iniciales nombre
+        const nombreCompleto = document.getElementById("nombre").innerText;
+        const palabras = nombreCompleto.split(' '); // consigo "María" y "Monge"
+        const letras = (palabras[0].slice(0, 1) + palabras[1].slice(0, 1)).toUpperCase();
+
+        //mostrar en el span
+        document.getElementById("iniciales").innerHTML = letras;
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar comentarios</title>
+</head>
+
+<body>
+    <h1>Filtrar comentarios</h1>
+
+    <textarea id="comentario" placeholder="Escribe tu comentario"></textarea>
+
+    <button id="filtrarBtn">Filtrar Comentario</button>
+
+    <div id="comentarioFiltrado" class="comentario">
+        <!-- Este sería el comentario filtrado -->
+    </div>
+
+    <script>
+        const palabrasOfensivas = ["tonto", "idiota", "inútil"];
+        const filtrarBtn = document.getElementById("filtrarBtn");
+        const comentarioInput = document.getElementById("comentario");
+        const comentarioFiltrado = document.getElementById("comentarioFiltrado");
+
+        // Al hacer clic en filtrar
+        filtrarBtn.addEventListener("click", () => {
+            let comentario = comentarioInput.value;
+
+            // Reemplazar las palabras ofensivas por asteriscos con bucle lenght e i
+            for (let i = 0; i < palabrasOfensivas.length; i++) {
+                const insulto = palabrasOfensivas[i];
+                const censura = "*".repeat(insulto.length);
+
+                comentario = comentario.replaceAll(insulto, censura);
+            }
+
+            // Mostrar el comentario filtrado
+            comentarioFiltrado.innerText = comentario;
+        });
+    </script>
+</body>
+
+</html>
