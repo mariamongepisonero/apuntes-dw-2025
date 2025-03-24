@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galería con Lightbox</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .gallery a img {
+      width: 250px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery a img:hover {
+      transform: scale(1.05);
+    }
+
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .btnCerrar {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Galería de Imágenes</h1>
+
+  <!-- Galería con enlaces (para .a) -->
+  <div class="gallery">
+    <a href="./img/1.jpg" class="a">
+      <img src="./img/1.jpg" alt="Imagen 1">
+    </a>
+    <a href="./img/2.jpeg" class="a">
+      <img src="./img/2.jpeg" alt="Imagen 2">
+    </a>
+    <a href="./img/3.jpg" class="a">
+      <img src="./img/3.jpg" alt="Imagen 3">
+    </a>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox">
+    <span class="btnCerrar">&times;</span>
+    <img class="imgBig" src="" alt="Vista ampliada">
+  </div>
+
+  <script>
+    //cogemos elementos del html
+    const listaEnlaces = document.querySelectorAll(".a");
+    const lightbox = document.querySelector(".lightbox");
+    const cerrar = document.querySelector(".btnCerrar");
+    const imgBig = document.querySelector(".imgBig");
+
+    //recorrer los enlaces
+    listaEnlaces.forEach(enlace => {
+      // Le agregamos un evento de clic a cada enlace
+      enlace.addEventListener("click", e => {
+        e.preventDefault(); // Evita que se abra el enlace
+        // Obtenemos la URL de la imagen desde el atributo href del enlace
+        const rutaImagen = enlace.getAttribute("href");
+        //para qye se muestre la imagen del click
+        imgBig.setAttribute("src", rutaImagen);
+        // Mostramos el lightbox añadiendo la clase "active" (CSS)
+        lightbox.classList.add("active");
+      });
+    });
+
+    // Agregamos un evento al botón de cerrar (la "X")
+    cerrar.addEventListener("click", () => {
+      // Ocultamos el lightbox quitando la clase "active"
+      lightbox.classList.remove("active");
+    });
+
+
+    
+    // Cerrar al hacer clic fuera de la imagen
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove("active");
+      }
+    });
+  </script>
+</body>
+
+</html>
