@@ -1,13 +1,13 @@
 .parallax-contenedor {
     position: relative;
     /* necesario para posicionar hijos en Absolute */
-    height: 80vh;
+    height: 70vh;
     overflow: hidden;
     /* ocultar parte del fondo que no entre */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: beige;
+    background-color: beige; /*no es muy necesario*/
     text-align: center;
 }
 
@@ -34,30 +34,34 @@
 }
 
 /* Estilos para el elemento flotante que acompaña a parallax */
-.parallax-elemento-flotante {
+/*posición inicial independiente para cada elemento*/
+.parallax-flotante {
     position: absolute;
-    bottom: 10%;
-    width: 100px;
-    right: 100%;
+    max-width: 150px;
+    height: auto;
     z-index: 2;
+    will-change: transform; /*la transformación de este objeto va a modificarse. funciona igual sin esta regla pero optimiza*/
   }
 
-.seccion-normal {
-    min-height: 20vh;
-    /* para poder hacer scroll */
-    padding: 40px;
-    text-align: center;
-    background-color: #f0f0f0;
-}
 
-@media (prefers-reduced-motion: reduce) {
-    .parallax-bg, .parallax-elemento-flotante {
-      /* Desactivar transitions, animaciones y efectos */
-      transition: none;
-    }
-  
-    body {
-      background-color: red;
-    }
+  #flotante-1{
+    bottom: 15%;
+    left: 50px;
+    width: 120px;
   }
-  
+
+  #flotante-2{
+    bottom: 20%;
+    left: 5%;
+    width: 100px;
+  }
+
+  #flotante-3{
+    bottom: 10%;
+    left: 40px;
+    width: 180px;
+    opacity: 0;
+  }
+
+
+
