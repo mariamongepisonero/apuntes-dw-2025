@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax multiples</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <section class="seccion-normal">
+        <h1>Scroll para ver el efecto parallax</h1>
+        <p>Esta es una sección normal para ocupar espacio</p>
+    </section>
+
+    <!--Seccion Parallax 1-->
+    <section class="parallax-contenedor" id="seccion-1">
+        <!-- Elemento que contenga al fondo de nuestra ventana -->
+        <div class="parallax-bg" style="background-image: url('./img/fondo.jpg')"></div>
+        <div class="parallax-contenido">
+            <h2>Sección Uno</h2>
+            <p>Este contenido está sobre el parallax</p>
+            <!--Añadir una imagen pequeña que también se mueva-->
+            <img src="./img/wolf.png" alt="Lobo" class="parallax-flotante" id="flotante-1">
+        </div>
+    </section>
+
+    <section class="seccion-normal">
+        <h1>Más contenido normal entre secciones</h1>
+        <p>Sigue haciendo scroll...</p>
+    </section>
+
+    <section class="seccion-normal">
+        <h1>ÚLtima sección de relleno</h1>
+        <p>Casi llegamos al final...</p>
+    </section>
+
+    <section class="seccion-normal">
+        <p>Fin de página</p>
+    </section>
+
+</body>
+
+</html>
