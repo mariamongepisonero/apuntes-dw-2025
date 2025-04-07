@@ -152,7 +152,7 @@ innerHTML => soporta etiquetas (la mejor opción)
 
     ```js
     let frase = "Hola como andan";
-    console.oog(frase.lenght); // 15 
+    console.log(frase.lenght); // 15 
     ```
 
     -------------------------------------------------------

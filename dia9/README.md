@@ -19,7 +19,7 @@ Para variables
 - snake_case: `mi_clase_de_html`
 
 ## Nomenclatura BEM (Block-Element-Modifier)
-La página oficial es [BER] (https://getbem.com/naming)
+La página oficial es [BEM] (https://getbem.com/naming)
 
 Bloque: encapsula una entidad independiente que tiene significado por sí mismo. Se usa minúsculas para ello. (En el ejemplo: tarjeta). El bloque es el nombre del componente el cual por sí solo tiene sentido (card, header, container, button, footer, menu...)
 
